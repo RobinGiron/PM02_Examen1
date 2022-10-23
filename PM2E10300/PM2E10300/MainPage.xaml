@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E10300.MainPage">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="LightSlateGray">
+                <Label Text="SITE VISITOR APP" 
+                       FontSize="40"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"/>
+                <Label Text="Presiona el espacio en blanco para tomar la foto" 
+                       FontSize="15"
+                       HorizontalOptions="CenterAndExpand"/>
+                <Frame BorderColor="Black" Margin="10" CornerRadius="20" BackgroundColor="Bisque">
+                    <Image x:Name="imgg" HeightRequest="300" WidthRequest="100" BackgroundColor="Bisque" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Label Text="Longitud:" FontSize="20" HorizontalOptions="CenterAndExpand"
+                       FontAttributes="Bold"
+                       Margin="20, 10, 20, 0"/>
+                <Entry x:Name="txtlong"
+                       IsEnabled="False"
+                       Margin="20, 5, 20, 0"/>
+
+                <Label Text="Latitud:" FontSize="20" HorizontalOptions="CenterAndExpand"
+                       FontAttributes="Bold"
+                       Margin="20, 0"/>
+                <Entry x:Name="txtlat"
+                       IsEnabled="False"
+                       Margin="20, 5, 20, 0"/>
+
+                <Label Text="Descripcion:" FontSize="20" HorizontalOptions="CenterAndExpand"
+                       FontAttributes="Bold"
+                       Margin="20, 0"/>
+                <Entry x:Name="descc" 
+                       Margin="20, 5, 20, 0"/>
+
+                <Grid ColumnDefinitions="*,*" Margin="15, 0">
+                    <Button x:Name="btnaguardar"
+                            BackgroundColor="Green"
+                            TextColor="Wheat"
+                            BorderColor="Red"
+                            CornerRadius="10"
+                        Text="Guardar"
+                        Grid.Column="0"
+                        Clicked="btnaguardar_Clicked" />
+
+                    <Button x:Name="btnlista"
+                            BackgroundColor="MediumBlue"
+                            TextColor="Wheat"
+                            BorderColor="Red"
+                            CornerRadius="10"
+                        Text="Ubicaciones"
+                        Grid.Column="1"
+                        Clicked="btnlista_Clicked" />
+                </Grid>
+
+                <Button x:Name="btnsalir"
+                        BackgroundColor="OrangeRed"
+                            TextColor="Wheat"
+                        BorderColor="Red"
+                            CornerRadius="10"
+                        Text="Salir"
+                        HorizontalOptions="Fill"
+                        Margin="95, 0, 95, 50"
+                        Clicked="btnsalir_Clicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

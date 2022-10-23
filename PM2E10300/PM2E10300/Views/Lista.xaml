@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Converters="clr-namespace:PM2E10300.Converters"
+             x:Class="PM2E10300.Views.Lista">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:ByteArrayToImageSourceConverter x:Key="ByteArrayToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Presiona el sitio para seleccionar" 
+                   BackgroundColor="CornflowerBlue"
+                       FontSize="15"
+                       HorizontalOptions="CenterAndExpand"/>
+            <ListView x:Name="listubi" ItemTapped="listubi_ItemTapped" RowHeight="90" SeparatorVisibility="Default" HasUnevenRows="True" BackgroundColor="DarkOrange">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell ImageSource="{Binding img, Converter={StaticResource ByteArrayToImage}}" Text="{Binding desc}" TextColor="Black" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
